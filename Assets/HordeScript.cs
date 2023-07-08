@@ -19,6 +19,7 @@ public class HordeScript : MonoBehaviour
     public int summary = 0;
     public int summary1 = 0;
     public int summary2 = 0;
+    public int maxEnemy = 9;
 
     // Start is called before the first frame update
     private void Start()
@@ -26,7 +27,10 @@ public class HordeScript : MonoBehaviour
 
         plusButton.onClick.AddListener(() =>
         {
-            summary = summary + 1;
+            if (summary < maxEnemy)
+            {
+                summary = summary + 1;
+            }
         });
 
         minusButton.onClick.AddListener(() =>
@@ -39,7 +43,10 @@ public class HordeScript : MonoBehaviour
         
         plusButton1.onClick.AddListener(() =>
         {
-            summary1 = summary1 + 1;
+            if (summary1 < maxEnemy)
+            {
+                summary1 = summary1 + 1;
+            }
         });
 
         minusButton1.onClick.AddListener(() =>
@@ -52,7 +59,10 @@ public class HordeScript : MonoBehaviour
         
         plusButton2.onClick.AddListener(() =>
         {
-            summary2 = summary2 + 1;
+            if (summary2 < maxEnemy)
+            {
+                summary2 = summary2 + 1;
+            }
         });
 
         minusButton2.onClick.AddListener(() =>
