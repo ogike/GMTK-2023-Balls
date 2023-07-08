@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
+    public Camera camera;
     //public GameObject target;
 
     private Vector2 movement;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         {
             movement = movement.normalized;
             rb.MovePosition(rb.position + (Time.fixedDeltaTime * moveSpeed * movement ));
+            camera.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
         }
     }
 }

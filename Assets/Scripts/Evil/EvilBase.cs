@@ -12,6 +12,7 @@ public class EvilBase : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject target;
     public PlayerController pc;
+    
 
     //private Vector2 movement;
     public bool isPlayer = false;
