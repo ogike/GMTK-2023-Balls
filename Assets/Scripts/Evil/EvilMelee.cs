@@ -37,6 +37,10 @@ public class EvilMelee : EvilBase
     public override IEnumerator Attack()
     {
         isCooldown = true;
+        var mousePos = PlayerController.Instance().camera.ScreenToWorldPoint(Input.mousePosition);
+        var dir = new Vector2(mousePos.x, mousePos.y) - PlayerController.Instance().eBase.rb.position;
+        //TODO: Start Animation
+        
         Debug.Log("I attacked!!");
         yield return new WaitForSeconds(cooldownTime);
         isCooldown = false;

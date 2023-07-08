@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Camera camera;
     public GameObject controlled;
 
-    private EvilBase eBase;
+    public EvilBase eBase;
     //public GameObject target;
 
     private Vector2 movement;
@@ -50,15 +50,19 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("E key was pressed.");
             (EvilBase,float) switchTargetTuple = EvilBase.FindNearestEvil(eBase);
-            Debug.Log(switchTargetTuple.Item2);
+            //Debug.Log(switchTargetTuple.Item2);
             if (switchTargetTuple.Item2 < 3.5f)
             {
                 controlled = switchTargetTuple.Item1.gameObject;
                 rb = controlled.GetComponent<Rigidbody2D>();
                 eBase = controlled.GetComponent<EvilBase>();
             }
-            
+        }
 
+        if (Input.GetMouseButtonDown(0) && !eBase.isCooldown)
+        {
+            
+            StartCoroutine(eBase.Attack());
         }
         
         

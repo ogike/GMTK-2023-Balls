@@ -17,7 +17,7 @@ public class EvilBase : MonoBehaviour
     public static List<EvilBase> instances { get { return _instances; } }
 
     public float cooldownTime = 1;
-    protected bool isCooldown = false;
+    public bool isCooldown = false;
 
     public static (EvilBase,float) FindNearestEvil(EvilBase me)
     {
@@ -59,7 +59,7 @@ public class EvilBase : MonoBehaviour
         
     }
     
-    public virtual IEnumerator  Attack()
+    public virtual IEnumerator Attack()
     {
         Debug.Log("I attacked!!");
         yield return new WaitForSeconds(cooldownTime);
