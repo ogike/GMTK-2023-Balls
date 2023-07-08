@@ -2088,6 +2088,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990930438}
   m_CullTransparentMesh: 1
+--- !u!1 &1033068949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033068951}
+  - component: {fileID: 1033068950}
+  m_Layer: 0
+  m_Name: HordeScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1033068950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033068949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cbe4584b87b2c4e9b5a93bb0dedb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plusButton: {fileID: 1618535200}
+  minusButton: {fileID: 1769388698}
+  plusButton1: {fileID: 1855779533}
+  minusButton1: {fileID: 990930440}
+  plusButton2: {fileID: 1940674091}
+  minusButton2: {fileID: 1880669717}
+  titleText: {fileID: 1619641893}
+  titleText1: {fileID: 1530994991}
+  titleText2: {fileID: 1421181385}
+  summary: 0
+  summary1: 0
+  summary2: 0
+--- !u!4 &1033068951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033068949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 962.86847, y: 529.97156, z: -0.31799483}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063207137
 GameObject:
   m_ObjectHideFlags: 0
