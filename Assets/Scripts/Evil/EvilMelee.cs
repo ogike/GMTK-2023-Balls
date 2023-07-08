@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EvilMelee : EvilBase
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -18,13 +16,14 @@ public class EvilMelee : EvilBase
     
     void FixedUpdate()
     {
-        if (!pc.isActive)
+        if (PlayerController.Instance().controlled != this && target != null)
         {
             Vector2 dir = target.transform.position - gameObject.transform.position;
             
-            if (dir.magnitude < range)
+            if (dir.magnitude < range && !isCooldown)
             {
-                Attack();
+                StartCoroutine(Attack());
+                
             }
             else
             {
@@ -35,8 +34,11 @@ public class EvilMelee : EvilBase
         }
     }
 
-    void Attack()
+    public override IEnumerator Attack()
     {
+        isCooldown = true;
         Debug.Log("I attacked!!");
+        yield return new WaitForSeconds(cooldownTime);
+        isCooldown = false;
     }
 }

@@ -1,40 +1,74 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public Camera camera;
+    public GameObject controlled;
+
+    private EvilBase eBase;
     //public GameObject target;
 
     private Vector2 movement;
-    public bool isActive = false;
     // Start is called before the first frame update
+
+    private static PlayerController _instance;
+
+    public static PlayerController Instance()
+    {
+        return _instance;
+    }
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+    }
+
     void Start()
     {
-        
+        //eBase = gameObject.GetComponent<EvilBase>();
+        rb = controlled.GetComponent<Rigidbody2D>();
+        eBase = controlled.GetComponent<EvilBase>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
+
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            //Debug.Log("E key was pressed.");
+            (EvilBase,float) switchTargetTuple = EvilBase.FindNearestEvil(eBase);
+            Debug.Log(switchTargetTuple.Item2);
+            if (switchTargetTuple.Item2 < 3.5f)
+            {
+                controlled = switchTargetTuple.Item1.gameObject;
+                rb = controlled.GetComponent<Rigidbody2D>();
+                eBase = controlled.GetComponent<EvilBase>();
+            }
+            
+
         }
+        
+        
     }
 
     private void FixedUpdate()
     {
-        if (isActive)
-        {
-            movement = movement.normalized;
-            rb.MovePosition(rb.position + (Time.fixedDeltaTime * moveSpeed * movement ));
-            camera.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -10);
-        }
+        movement = movement.normalized;
+        rb.MovePosition(rb.position + (Time.fixedDeltaTime * moveSpeed * movement ));
+        camera.transform.position = new Vector3(eBase.transform.position.x, eBase.transform.position.y, -10);
+
     }
 }

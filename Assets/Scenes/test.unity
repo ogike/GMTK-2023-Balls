@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: -3974110923645427231, guid: 624120f6369bdb44b954037a2e4f0604, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1122457711}
+      objectReference: {fileID: 0}
     - target: {fileID: -3974110923645427231, guid: 624120f6369bdb44b954037a2e4f0604, type: 3}
       propertyPath: moveSpeed
       value: 2
@@ -281,6 +281,53 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6636169218893159933, guid: 8470ccfd9f46bbf4f86aee1590f24d47, type: 3}
   m_PrefabInstance: {fileID: 1509485603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381334047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381334049}
+  - component: {fileID: 1381334048}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1381334048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381334047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c247acf4c6074b8cf0e57b5e49d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  camera: {fileID: 309092521}
+  controlled: {fileID: 1122457711}
+--- !u!4 &1381334049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381334047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8329722, y: -1.5368435, z: 0.028944373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1509485603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,10 +379,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2207557803786841036, guid: 8470ccfd9f46bbf4f86aee1590f24d47, type: 3}
-      propertyPath: isActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3217745694345401892, guid: 8470ccfd9f46bbf4f86aee1590f24d47, type: 3}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 1381334048}
     - target: {fileID: 6636169218893159933, guid: 8470ccfd9f46bbf4f86aee1590f24d47, type: 3}
       propertyPath: m_Name
       value: Evil_Ranged

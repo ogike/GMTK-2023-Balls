@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1954339346711599687}
   - component: {fileID: -1772726136725265700}
   - component: {fileID: 6766786613931157475}
-  - component: {fileID: 2207557803786841036}
   - component: {fileID: 3217745694345401892}
   m_Layer: 0
   m_Name: Evil_Ranged
@@ -108,21 +107,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2207557803786841036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636169218893159933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b20c247acf4c6074b8cf0e57b5e49d2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: -1772726136725265700}
-  isActive: 0
 --- !u!114 &3217745694345401892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,5 +123,5 @@ MonoBehaviour:
   range: 2
   rb: {fileID: -1772726136725265700}
   target: {fileID: 0}
-  pc: {fileID: 2207557803786841036}
+  pc: {fileID: 0}
   isPlayer: 0
